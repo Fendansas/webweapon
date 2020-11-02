@@ -6,8 +6,8 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class productBD {
-
-    private static String url = "jdbc:postgresql://localhost:5432/postgres";
+//jdbc:postgresql://hostname:port/dbname
+    private static String url = "jdbc:pastgresql://localhost/productdb";
     private static String username = "postgres";
     private static String password = "070809";
 
@@ -122,10 +122,6 @@ public class productBD {
         }
         return 0;
     }
-
-
-
-
 
 
 
