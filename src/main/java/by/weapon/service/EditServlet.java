@@ -42,7 +42,7 @@ public class EditServlet extends HttpServlet {
             int price = Integer.parseInt(request.getParameter("price"));
             Product product = new Product(id, name, price);
             productBD.update(product);
-            response.sendRedirect(request.getContextPath() + "/index");
+            response.sendRedirect(request.getContextPath() + "");
         }
         catch(Exception ex) {
 

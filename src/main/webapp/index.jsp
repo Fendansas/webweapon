@@ -13,16 +13,21 @@ crossorigin="anonymous">
 
 
 <h2>Products List</h2>
-<p><a href='<c:url value="/create" />'>Create new</a></p>
-<table>
-<c:if test="${10 > 9}">
-<p>True<p>
-</c:if>
-<c:if test="${10 < 9}">
-<p>False<p>
-</c:if>
-<p>${products.size()}<p>
-<tr><th>Name</th><th>Price</th><th></th></tr>
+<p>
+<a class="btn btn-primary" href='<c:url value="/create" />'>Create new</a>
+</p>
+
+
+<table class="table">
+
+<thead class="thead-dark">
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Price</th>
+<th scope="col">Action</th>
+<th></th></tr>
+</thead>
+
 <c:forEach var="product" items="${products}">
 <tr><td>${product.name}</td>
 <td>${product.price}</td>
