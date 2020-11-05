@@ -12,6 +12,10 @@
 <input name="name" value="${product.name}" /><br><br>
 <label>Price</label><br>
 <input name="price" value="${product.price}" type="number" min="100" /><br><br>
+<label>idcalibre</label><br>
+<input name="idcalibre" value="${product.idcalibre}" type="number" min="1" /><br><br>
+
+
 <input type="submit" value="Send" />
 </form>
 </body>

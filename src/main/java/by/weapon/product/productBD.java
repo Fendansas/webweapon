@@ -25,7 +25,8 @@ public class productBD {
                     int id = resultSet.getInt(1);
                     String name = resultSet.getString(2);
                     int price = resultSet.getInt(3);
-                    Product product = new Product(id, name, price);
+                    int idcalibre = resultSet.getInt(4);
+                    Product product = new Product(id, name, price, idcalibre );
                     products.add(product);
                 }
             }
@@ -51,7 +52,8 @@ public class productBD {
                         int prodId = resultSet.getInt(1);
                         String name = resultSet.getString(2);
                         int price = resultSet.getInt(3);
-                        product = new Product(prodId, name, price);
+                        int idcalibre = resultSet.getInt(4);
+                        product = new Product(prodId, name, price,idcalibre);
                     }
                 }
             }
@@ -67,10 +69,11 @@ public class productBD {
             Class.forName("org.postgresql.Driver").getDeclaredConstructor().newInstance();
             try (Connection conn = DriverManager.getConnection(url, username, password)){
 
-                String sql = "INSERT INTO public.products (name, price) Values (?, ?)";
+                String sql = "INSERT INTO public.products (name, price, idcalibre) Values (?, ?, ?)";
                 try(PreparedStatement preparedStatement = conn.prepareStatement(sql)){
                     preparedStatement.setString(1, product.getName());
                     preparedStatement.setInt(2, product.getPrice());
+                    preparedStatement.setInt(3, product.getIdcalibre());
 
                     return  preparedStatement.executeUpdate();
                 }
@@ -87,11 +90,12 @@ public class productBD {
             Class.forName("org.postgresql.Driver").getDeclaredConstructor().newInstance();
             try (Connection conn = DriverManager.getConnection(url, username, password)){
 
-                String sql = "UPDATE public.products SET name = ?, price = ? WHERE id = ?";
+                String sql = "UPDATE public.products SET name = ?, price = ? WHERE id = ?, idcalibre = ? ";
                 try(PreparedStatement preparedStatement = conn.prepareStatement(sql)){
                     preparedStatement.setString(1, product.getName());
                     preparedStatement.setInt(2, product.getPrice());
                     preparedStatement.setInt(3, product.getId());
+                    preparedStatement.setInt(4, product.getIdcalibre());
 
                     return  preparedStatement.executeUpdate();
                 }

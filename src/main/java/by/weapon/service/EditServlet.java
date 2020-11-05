@@ -40,7 +40,8 @@ public class EditServlet extends HttpServlet {
             int id = Integer.parseInt(request.getParameter("id"));
             String name = request.getParameter("name");
             int price = Integer.parseInt(request.getParameter("price"));
-            Product product = new Product(id, name, price);
+            int idcalibre = Integer.parseInt(request.getParameter("idcalibre"));
+            Product product = new Product(id, name, price, idcalibre);
             productBD.update(product);
             response.sendRedirect(request.getContextPath() + "");
         }

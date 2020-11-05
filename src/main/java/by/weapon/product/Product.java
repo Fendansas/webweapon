@@ -10,21 +10,26 @@ public class Product implements Serializable {
     private int id;
     private String name;
     private int price;
+    private int idcalibre;
+
 
     public Product() {
     }
 
-    public Product(String name, int price) {
+    public Product(String name, int price, int idcalibre ) {
 
         this.name = name;
         this.price = price;
+        this.idcalibre = idcalibre;
+
     }
 
-    public Product(int id, String name, int price) {
+    public Product(int id, String name, int price, int idcalibre) {
 
         this.id = id;
         this.name = name;
         this.price = price;
+        this.idcalibre = idcalibre;
     }
 
     public int getId() {
@@ -45,6 +50,14 @@ public class Product implements Serializable {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public int getIdcalibre() {
+        return idcalibre;
+    }
+
+    public void setIdcalibre(int idcalibre) {
+        this.idcalibre = idcalibre;
     }
 }
 

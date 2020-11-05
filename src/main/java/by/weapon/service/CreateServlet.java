@@ -24,7 +24,8 @@ public class CreateServlet extends HttpServlet {
         try {
             String name = request.getParameter("name");
             int price = Integer.parseInt(request.getParameter("price"));
-            Product product = new Product(name, price);
+            int idcalibre = Integer.parseInt(request.getParameter("idcalibre"));
+            Product product = new Product(name, price, idcalibre);
             productBD.insert(product);
             response.sendRedirect(request.getContextPath()+"");
         }

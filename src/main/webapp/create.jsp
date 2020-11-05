@@ -13,7 +13,11 @@
 <input name="name"/><br><br>
 <label>Price</label><br>
 <input name="price" type="number" min="100" /><br><br>
+<label>idcalibre</label><br>
+<input name="idcalibre" type="number" min="1" /><br><br>
+
 <input type="submit" value="Save" />
 </form>
 </body>
 </html>
+

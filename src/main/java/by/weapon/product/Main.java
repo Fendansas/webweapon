@@ -29,7 +29,9 @@ public class Main {
                     int id = resultSet.getInt(1);
                     String name = resultSet.getString(2);
                     int price = resultSet.getInt(3);
-                    Product product = new Product(id, name, price);
+                    int idcalibre = resultSet.getInt(4);
+
+                    Product product = new Product(id, name, price,idcalibre);
                     products.add(product);
                 }
             }
